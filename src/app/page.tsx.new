@@ -1,12 +1,8 @@
-'use client';
-
 import { MetricCardComponent } from '@/components/metric-card';
 import { AnalyticsChart } from '@/components/analytics-chart';
 import { CampaignsTable } from '@/components/campaigns-table';
 import { ChannelChart } from '@/components/channel-chart';
 import { PerformanceChart } from '@/components/performance-chart';
-import { Layout } from '@/components/layout';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
   generateChartData, 
   generateMetricCards, 
@@ -23,7 +19,9 @@ export default function Home() {
   const performanceData = generatePerformanceData();
 
   return (
-    <Layout>
+    <main className="container mx-auto p-4 space-y-4">
+      <h1 className="text-4xl font-bold">ADmyBRAND Insights</h1>
+      
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {metrics.map((metric, index) => (
           <MetricCardComponent key={index} data={metric} />
@@ -31,38 +29,14 @@ export default function Home() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <Card>
-          <CardHeader>
-            <CardTitle>Analytics Overview</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <AnalyticsChart data={chartData} />
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Channel Distribution</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ChannelChart data={channelData} />
-          </CardContent>
-        </Card>
+        <AnalyticsChart data={chartData} />
+        <PerformanceChart data={performanceData} />
       </div>
 
-      <div className="mt-4">
-        <Card>
-          <CardHeader>
-            <CardTitle>Campaign Performance</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <PerformanceChart data={performanceData} />
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="mt-4">
+      <div className="grid gap-4 md:grid-cols-2">
+        <ChannelChart data={channelData} />
         <CampaignsTable campaigns={campaigns} />
       </div>
-    </Layout>
+    </main>
   );
 }

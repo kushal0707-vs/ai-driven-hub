@@ -1,77 +1,105 @@
-import { Campaign, ChartData, MetricCard } from '@/types/dashboard';
-import { addDays, format, subDays } from 'date-fns';
+import { Campaign, MetricCard, ChartData, ChannelData, PerformanceData } from '@/types/dashboard';
+import { add } from 'date-fns';
 
-export const generateMetricCards = (): MetricCard[] => {
+export function generateMetricCards(): MetricCard[] {
   return [
     {
       title: 'Total Views',
-      value: 2457,
-      change: 12.5,
+      value: 2347891,
+      change: 12.3,
       trend: 'up',
     },
     {
-      title: 'Total Clicks',
-      value: 427,
-      change: 8.2,
-      trend: 'up',
-    },
-    {
-      title: 'Conversions',
-      value: 64,
-      change: -3.1,
+      title: 'Click Rate',
+      value: '2.4%',
+      change: -0.4,
       trend: 'down',
     },
     {
-      title: 'CTR',
-      value: 3.2,
-      change: 1.5,
+      title: 'Conversions',
+      value: 48291,
+      change: 8.1,
       trend: 'up',
     },
+    {
+      title: 'Cost per Click',
+      value: '$0.42',
+      change: -0.1,
+      trend: 'down',
+    },
   ];
-};
+}
 
-export const generateChartData = (days: number): ChartData[] => {
+export function generateChartData(days: number): ChartData[] {
   const data: ChartData[] = [];
-  const today = new Date();
+  const now = new Date();
 
   for (let i = days - 1; i >= 0; i--) {
-    const date = subDays(today, i);
+    const date = add(now, { days: -i });
     data.push({
-      date: format(date, 'MMM dd'),
-      views: Math.floor(Math.random() * 500) + 100,
-      clicks: Math.floor(Math.random() * 100) + 20,
-      conversions: Math.floor(Math.random() * 20) + 5,
+      date: date.toISOString().split('T')[0],
+      views: Math.floor(Math.random() * 100000) + 50000,
+      clicks: Math.floor(Math.random() * 5000) + 2500,
+      conversions: Math.floor(Math.random() * 500) + 100,
     });
   }
 
   return data;
-};
+}
 
-export const generateCampaigns = (): Campaign[] => {
-  const campaigns: Campaign[] = [];
-  const statuses: Campaign['status'][] = ['active', 'paused', 'completed'];
-  const today = new Date();
+export function generateCampaigns(): Campaign[] {
+  return [
+    {
+      id: '1',
+      name: 'Summer Sale 2025',
+      status: 'active',
+      budget: 50000,
+      spent: 32451,
+      impressions: 1234567,
+      clicks: 45678,
+      conversions: 2345,
+      startDate: '2025-06-01',
+    },
+    {
+      id: '2',
+      name: 'Back to School',
+      status: 'paused',
+      budget: 30000,
+      spent: 12789,
+      impressions: 567890,
+      clicks: 23456,
+      conversions: 1234,
+      startDate: '2025-07-15',
+    },
+    {
+      id: '3',
+      name: 'Holiday Special',
+      status: 'completed',
+      budget: 75000,
+      spent: 75000,
+      impressions: 2345678,
+      clicks: 89012,
+      conversions: 4567,
+      startDate: '2024-11-25',
+    },
+  ];
+}
 
-  for (let i = 0; i < 10; i++) {
-    const startDate = subDays(today, Math.floor(Math.random() * 90));
-    const impressions = Math.floor(Math.random() * 10000) + 1000;
-    const clicks = Math.floor(impressions * (Math.random() * 0.2));
-    const conversions = Math.floor(clicks * (Math.random() * 0.15));
-    const budget = Math.floor(Math.random() * 10000) + 5000;
-    const spent = Math.floor(budget * (Math.random() * 0.9));
+export function generateChannelData(): ChannelData[] {
+  return [
+    { name: 'Social Media', value: 35 },
+    { name: 'Search', value: 25 },
+    { name: 'Email', value: 20 },
+    { name: 'Direct', value: 15 },
+    { name: 'Other', value: 5 },
+  ];
+}
 
-    campaigns.push({
-      id: `camp-${i + 1}`,
-      name: `Campaign ${i + 1}`,
-      status: statuses[Math.floor(Math.random() * statuses.length)],
-      budget,
-      spent,
-      impressions,
-      clicks,
-      conversions,
-      startDate: format(startDate, 'yyyy-MM-dd'),
-    });
-  }
-
-  return campaigns;
-};
+export function generatePerformanceData(): PerformanceData[] {
+  return [
+    { category: 'Views', organic: 45000, paid: 55000 },
+    { category: 'Clicks', organic: 20000, paid: 25000 },
+    { category: 'Conversions', organic: 1200, paid: 1800 },
+    { category: 'Revenue', organic: 25000, paid: 35000 },
+  ];
+}

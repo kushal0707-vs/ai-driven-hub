@@ -1,6 +1,14 @@
-import { MetricCard } from '@/types/dashboard';
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { TrendingDown, TrendingUp } from 'lucide-react';
+
+interface MetricCard {
+  title: string;
+  value: string | number;
+  change: number;
+  trend: 'up' | 'down';
+}
 
 interface MetricCardProps {
   data: MetricCard;
